@@ -15,7 +15,7 @@ import static org.springframework.http.RequestEntity.put;
 @Service
 public class EmployeeServiceimpl implements EmployeeService {
 
-    private final int STORAGE_SIZE = 5;
+    private final int STORAGE_SIZE = 2;
     @PostConstruct
             public void initEmployee(){
         put("Ivan", "Petin", 1000, 1 );
