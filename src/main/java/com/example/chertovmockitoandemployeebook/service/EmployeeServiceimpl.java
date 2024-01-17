@@ -19,10 +19,10 @@ public class EmployeeServiceimpl implements EmployeeService {
     @PostConstruct
             public void initEmployee(){
         put("Ivan", "Petin", 1000, 1 );
-        put("Ivan2", "Petin", 1000, 3 );
-        put("Ivan3", "Petin", 1000, 3 );
-        put("Ivan4", "Petin", 1000, 1 );
-        put("Ivan5", "Petin", 1000, 1 );
+        put("Ivan2", "Petin", 3000, 3 );
+        put("Ivan3", "Petin", 600, 3 );
+        put("Ivan4", "Petin", 1500, 1 );
+        put("Ivan5", "Petin", 5000, 1 );
     };
     private final Map<String, Employee> employeeMap = new HashMap<>() ;
 
