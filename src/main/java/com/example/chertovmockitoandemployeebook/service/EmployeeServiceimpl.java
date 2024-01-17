@@ -3,18 +3,13 @@ package com.example.chertovmockitoandemployeebook.service;
 import com.example.chertovmockitoandemployeebook.exception.EmployeeAlreadyAddedException;
 import com.example.chertovmockitoandemployeebook.exception.EmployeeNotFoundException;
 import com.example.chertovmockitoandemployeebook.exception.EmployeeStorageIsFullException;
-import com.example.chertovmockitoandemployeebook.exception.InvalidInputException;
 import com.example.chertovmockitoandemployeebook.model.Employee;
-import com.example.chertovmockitoandemployeebook.service.EmployeeService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.apache.tomcat.util.http.parser.HttpParser.isAlpha;
 import static org.springframework.http.RequestEntity.put;
 
 @Service
@@ -56,7 +51,7 @@ public class EmployeeServiceimpl implements EmployeeService {
 //        return emplFL;
 //    }
 @Override
-    public Employee addEmployee(String firstName, String lastName, int salary, int id) {
+    public Employee addEmployee(String firstName, String lastName, Integer salary, Integer id) {
 //        validateInput(firstName, lastName);
 
         if (employeeMap.containsKey(firstName + lastName)) {

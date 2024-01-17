@@ -18,7 +18,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Employee getEmployeeMinSalaryByDepartment(Integer id) {
         return employeeService.allEmployee().values().stream()
-                .filter(employee -> employee.getId().equals(id))
+                .filter(employee -> employee.getId() == id)
                 .min(Comparator.comparingInt(Employee::getSalary))
                 .orElse(null);
     }
@@ -26,7 +26,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Employee getEmployeeMaxSalaryByDepartment(Integer id) {
         return employeeService.allEmployee().values().stream()
-                .filter(employee -> employee.getId().equals(id))
+                .filter(employee -> employee.getId() == id)
                 .max(Comparator.comparingInt(Employee::getSalary))
                 .orElse(null);
     }
@@ -34,7 +34,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Integer getEmployeeSumSalaryByDepartment(Integer id) {
          return employeeService.allEmployee().values().stream()
-                .filter(e -> e.getId().equals(id))
+                .filter(e -> e.getId() == id)
                  .map(Employee::getSalary)
                  .mapToInt(Integer::intValue)
                  .sum();
@@ -43,7 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<Employee> allEmployeesByDepartment(Integer id){
         return employeeService.allEmployee().values().stream()
-                .filter(employee -> employee.getId().equals(id))
+                .filter(employee -> employee.getId() == id)
                 .collect(Collectors.toList());
     }
 
