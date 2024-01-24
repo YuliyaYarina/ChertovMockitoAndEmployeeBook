@@ -58,7 +58,7 @@ public class EmployeeServiceimpl implements EmployeeService {
             throw new EmployeeAlreadyAddedException("Такой сотрудник уже существует");
         }
         if (employeeMap.size() == STORAGE_SIZE) {
-            throw new EmployeeStorageIsFullException("Хранилище полное");
+            throw new EmployeeStorageIsFullException("Привышен лимит сотрудников");
         }
         employeeMap.put(
                 (firstName + lastName),
